@@ -20,14 +20,13 @@ body {
 }
 
 #home-container {
-  height: 425px;
+  min-height: 425px;
 }
 
 #page-content {
   flex: 1 0 auto;
   background-color: lightgrey;
   min-height: 100%;
-  padding-bottom: 1rem;
 }
 
 #sticky-footer {
