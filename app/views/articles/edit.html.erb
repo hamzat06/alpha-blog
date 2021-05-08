@@ -1,0 +1,7 @@
+<h1 class="text-center mt-4">Editing Article</h1>
+<%= render 'form' %>
+<div class="text-center mb-3">
+  <%= link_to article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-danger' do %>
+    <i class="bi bi-trash"></i> Delete Article
+  <% end %>
+</div>
