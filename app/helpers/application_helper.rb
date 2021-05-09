@@ -13,7 +13,7 @@ module ApplicationHelper
     # compile URL which can be used in <gravatar url="RIGHT_HERE"...
     gravatar_url = "https://www.gravatar.com/avatar/#{hash}?s=#{size}"
 
-    image_tag(gravatar_url, alt: user.username + "'s photo", class: "rounded shadow mx-auto d-block")
+    image_tag(gravatar_url, alt: user.username + "'s Gravatar", class: "rounded shadow mx-auto d-block")
   end
 
 end

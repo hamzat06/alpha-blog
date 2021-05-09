@@ -1,7 +1,18 @@
-<h1 class="text-center mt-4"><%= @user.username.capitalize %>'s profile'</h1>
+<h1 class="text-center mt-4"><%= @user.username.capitalize %>'s profile</h1>
 
-<%= gravatar_for @user, size: 200 %>
+<div class="container">
+  <div class="text-center">
+    <%= gravatar_for @user, size: 200 %>
+  </div>
 
-<h3 class="text-center mt-4">Your Articles</h3>
 
-<%= render 'articles/article' %>
+  <h3 class="text-center mt-4">All articles by <i><%= @user.username %></i></h3>
+
+  <%= render 'articles/article' %>
+
+  <div class="text-center">
+    <%= link_to :back, class: 'font-weight-bold' do %>
+      <i class="bi bi-chevron-left mr-2 text-info"></i>Back to previous page
+    <% end %>
+  </div>
+</div>
