@@ -9,11 +9,13 @@
         </div>
         <div class="card-body">
           <div class="card-text text-left"><%= simple_format(@article.description) %></div>
-          <%= link_to edit_article_path(@article), class: 'btn btn-outline-primary' do %>
-            <i class="bi bi-pencil-square"></i> Edit
-          <% end %>
-          <%= link_to article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-danger' do %>
-            <i class="bi bi-trash"></i> Delete
+          <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
+            <%= link_to edit_article_path(@article), class: 'btn btn-outline-primary' do %>
+              <i class="bi bi-pencil-square"></i> Edit
+            <% end %>
+            <%= link_to article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-danger' do %>
+              <i class="bi bi-trash"></i> Delete
+            <% end %>
           <% end %>
         </div>
         <div class="card-footer text-muted">
