@@ -1,8 +1,9 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show]
+  before_action :require_admin, except: [:index, :show]
 
   def index
-    # @categories = Category.all
+    @categories = Category.paginate(page: params[:page], per_page: 3).order(:name)
   end
 
   def new
@@ -30,6 +31,13 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name)
+  end
+
+  def require_admin
+    if !(logged_in? && current_user.admin?)
+      flash[:alert] = "Page not found"
+      redirect_to categories_path
+    end
   end
 
 end
