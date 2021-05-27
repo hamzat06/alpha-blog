@@ -10,6 +10,11 @@
         <div class="card text-center shadow mb-5 bg-white rounded">
           <div class="card-body">
             <h5 class="card-title px-1"><%= link_to category.name, category_path(category), class: 'text-success' %></h5>
+            <p class="card-text"><%= pluralize(category.articles.count, "article") %></p>
+            <%= link_to 'Show', category_path(category), class: 'btn btn-outline-success' %>
+            <% if logged_in? && current_user.admin? %>
+              <%= link_to 'Edit', edit_category_path(category), class: 'btn btn-outline-primary' %>
+            <% end %>
           </div>
           <div class="card-footer text-muted">
             <small>created <%= time_ago_in_words(category.created_at) %> ago,

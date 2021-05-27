@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show]
+  before_action :set_category, only: [:show, :edit, :update]
   before_action :require_admin, except: [:index, :show]
 
   def index
@@ -11,7 +11,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
+  end
 
+  def edit
   end
 
   def create
@@ -23,6 +25,22 @@ class CategoriesController < ApplicationController
       render 'new'
     end
   end
+
+  def update
+    if @category.update(category_params)
+      flash[:notice] = "Category was updated successfully"
+      redirect_to @category
+    else
+      render 'edit'
+    end
+  end
+
+  # def destroy
+  #   if @article.destroy
+  #     flash[:delete] = "Article was deleted successfully"
+  #     redirect_to articles_path
+  #   end
+  # end
 
   private
   def set_category

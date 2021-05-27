@@ -1,1 +1,29 @@
-<h1 class="text-center mt-4"><%= @category.name %></h1>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-8 mt-4">
+      <div class="card text-center shadow mb-3 bg-white rounded">
+        <div class="card-header font-italic">
+          <p><b><%= @category.name %></b></p>
+          <% if @category.articles.any? %>
+            <%= pluralize(@category.articles.count, "article") %>
+          <% end %>
+        </div>
+
+        <% if logged_in? && current_user.admin? %>
+          <div class="card-body">
+            <%= link_to edit_category_path(@category), class: 'btn btn-outline-primary' do %>
+              <i class="bi bi-pencil-square"></i> Edit
+            <% end %>
+
+          </div>
+          <div class="card-footer text-muted">
+            <small>created <%= time_ago_in_words(@category.created_at) %> ago,
+              edited <%= time_ago_in_words(@category.updated_at) %> ago
+            </small>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= render 'articles/back' %>
+</div>
