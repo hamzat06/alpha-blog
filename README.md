@@ -1,24 +1,22 @@
 # README
+This app is built with Rails version 6.0.3.1 and Ruby version 2.6.7
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I learned how to implement crud operation in both the routes and controllers.
 
-Things you may want to cover:
+Learned how to create models and controller from scratch without generator and other rails magic.
 
-* Ruby version
+And the best is the automated testing. It was really fun learning that too lol.
 
-* System dependencies
+It was really fun building this. The UI isn't too great coz i didn't write any custom CSS for it but i built this blog just to be sound in the backend world!
 
-* Configuration
+i can say freely now that i have now become a Junior Backend Developer.
 
-* Database creation
+Which also makes me a FullStack developer coz of my Vue JS skill.
 
-* Database initialization
+If you are reading this... Ruby on rails is the most easy to understand framework. Start from the basics by learning Ruby, then rails becomes easier to learn.
 
-* How to run the test suite
+I didn't understand some stuffs at some point till we started reusing them which made it clearer.
 
-* Services (job queues, cache servers, search engines, etc.)
+I will be building more projects soon. Next is gonna be A CHAT APP.
 
-* Deployment instructions
-
-* ...
+Thank you for reading. Hamzat Ajanaku.
